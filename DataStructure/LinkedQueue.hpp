@@ -1,0 +1,6 @@
+#pragma once
+#ifndef LINKEDQUEUE_HPP_INCLUDE
+
+
+
+#endif // !LINKEDQUEUE_HPP_INCLUDE

@@ -142,6 +142,37 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="..\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ArrayBinaryHeap.cpp" />
+    <ClCompile Include="ArrayHash.cpp" />
+    <ClCompile Include="ArrayQueue.cpp" />
+    <ClCompile Include="ArrayStack.cpp" />
+    <ClCompile Include="BinaryTree.cpp" />
+    <ClCompile Include="DynamicArray.cpp" />
+    <ClCompile Include="LinkedHash.cpp" />
+    <ClCompile Include="LinkedStack.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="PriorityQueue.cpp" />
+    <ClCompile Include="SingleLinkedList.cpp" />
+    <ClCompile Include="StackQueue.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ArrayBinaryHeap.hpp" />
+    <ClInclude Include="ArrayHash.hpp" />
+    <ClInclude Include="ArrayQueue.hpp" />
+    <ClInclude Include="AVLBinarySearchTree.hpp" />
+    <ClInclude Include="BinaryTree.hpp" />
+    <ClInclude Include="common.hpp" />
+    <ClInclude Include="DynamicArray.hpp" />
+    <ClInclude Include="LinkedHash.hpp" />
+    <ClInclude Include="LinkedQueue.hpp" />
+    <ClInclude Include="LinkedStack.hpp" />
+    <ClInclude Include="PriorityQueue.hpp" />
+    <ClInclude Include="SingleLinkedList.hpp" />
+    <ClInclude Include="StackQueue.hpp" />
+    <ClInclude Include="stdafx.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
