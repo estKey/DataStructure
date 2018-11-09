@@ -9,6 +9,7 @@ using namespace ls;		//Linked Stack
 using namespace aq;		//Array Queue
 using namespace sq;		//Stack QUeue
 using namespace bt;		//Binary Tree
+using namespace lh;
 
 
 int main(char* argv[], int argc)
