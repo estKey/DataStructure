@@ -20,7 +20,7 @@ namespace ah {
 	{
 		int key = 0;
 		for (int i = 0; i < strlen(data); i++)
-			key *= HashValue + data[i];
+			key *= 1 + data[i];
 		return key;
 	}
 

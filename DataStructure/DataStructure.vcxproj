@@ -166,6 +166,7 @@
     <ClInclude Include="BinaryTree.hpp" />
     <ClInclude Include="common.hpp" />
     <ClInclude Include="DynamicArray.hpp" />
+    <ClInclude Include="LinkedBinaryHeap.hpp" />
     <ClInclude Include="LinkedHash.hpp" />
     <ClInclude Include="LinkedQueue.hpp" />
     <ClInclude Include="LinkedStack.hpp" />

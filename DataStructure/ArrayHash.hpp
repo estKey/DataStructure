@@ -4,9 +4,6 @@
 
 namespace ah {
 #include "common.hpp"
-	
-#define M size
-	int HashValue = 1031;
 	typedef char* Data;
 	typedef Data* HashTable;
 	typedef struct _Hash
