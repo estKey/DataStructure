@@ -24,7 +24,7 @@ namespace ls {
 	void Pop(Stack *stack);
 	int *Tos(Stack *stack);
 	void printStack(Stack * stack);
-	int isEmpty(Stack* top);
+	int isEmpty(Stack* stack);
 }
 
 #endif

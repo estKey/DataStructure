@@ -103,8 +103,5 @@
     <ClInclude Include="LinkedBinaryHeap.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ArrayStack.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

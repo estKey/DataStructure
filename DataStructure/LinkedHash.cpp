@@ -40,7 +40,7 @@ namespace lh {
 		return newHashTable;
 	}
 
-	void *RandHtGen(HashTable *h, int n)
+	void RandHtGen(HashTable *h, int n)
 	// Generate Random Hash Table with n Elements
 	{
 		for (int i = 0; i< n; i++) {
@@ -53,6 +53,7 @@ namespace lh {
 			printf("%d %s\n", i + 1, p);
 			insert(p, h);
 		}
+		return;
 	}
 
 	void addFront(Data data, Hash *hashlist)
