@@ -1,5 +1,5 @@
 ﻿/// For Education Purpose
-/// Author： EstKey
+/// Author： EstKey, Arlter
 #include "stdafx.hpp"
 
 using namespace sll;	// Single Linked list
