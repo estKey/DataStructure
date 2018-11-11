@@ -33,7 +33,7 @@ namespace as {
 
 	void Push(Stack *stack, int value)
 	{
-		if(stack != NULL)
+		if(!isEmpty(stack))
 		{
 			if (stack->stack)
 			{
@@ -45,10 +45,11 @@ namespace as {
 
 	void Pop(Stack *stack)
 	{
-		if (stack != NULL)
+		if (!isEmpty(stack))
 		{
 			if (stack->stack)
 			{
+				// if(stack->top>0)
 				stack->top--;
 			}
 		}
@@ -78,5 +79,8 @@ namespace as {
 		}
 	}
 
-
+	int isEmpty(Stack *stack)
+	{
+		return (stack->top == -1 || stack != NULL);
+	}
 }

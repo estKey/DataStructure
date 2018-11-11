@@ -20,25 +20,25 @@ namespace aq {
 		Queue *newQueue = (Queue *)malloc(sizeof(Queue));
 		newQueue->size = size;
 		newQueue->head = 0;
-		newQueue->tail = 0;
+		newQueue->tail = -1;
 		newQueue->array = (type *)malloc(sizeof(type)*size);
 		return newQueue;
 	}
 
 	void enQueue(Queue *queue, type value)
 	{
-		if (queue->size >= queue->tail+1)
+		if (queue->size >= queue->tail + 1)
 		{
 			++queue->tail;
 			queue->array[queue->tail] = value;
-			queue->size++;
+			// queue->size++; 
 		}
 		else {
 			queue->size *= 2;
 			queue->array=(type*)realloc(queue->array, sizeof(type)*(queue->size));
 			++queue->tail;
 			queue->array[queue->tail] = value;
-			queue->size++;
+			// queue->size++;
 		}
 	}
 
@@ -46,11 +46,25 @@ namespace aq {
 	{
 		if (!isEmpty(queue))
 		{
+			if (queue->head > queue->tail) {
+				int dequeue = queue->array[queue->head];
+				queue->head++;
+				return dequeue;
+			}
+		}
+	}
+
+	int deQueue1(Queue *queue)
+	{
+		if (!isEmpty(queue))
+		{
 			int dequeue = queue->array[queue->head];
 			for (int i = 0; i < queue->tail; i++)
 				queue->array[i] = queue->array[i + 1];
 			queue->tail--;
-			queue->size--;
+			if (queue->size > queue->tail * 2)
+				queue->array = (type *)realloc(queue->array, queue->size);
+			// queue->size--; 
 			return dequeue;
 		}
 	}
@@ -68,6 +82,6 @@ namespace aq {
 
 	int isEmpty(Queue *queue)
 	{
-		return (queue->size == 0);
+		return (queue->tail == -1);
 	}
 }

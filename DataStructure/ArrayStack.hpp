@@ -18,7 +18,7 @@ namespace as {
 	void Pop(Stack *stack);
 	int *Tos(Stack *stack);
 	void printStack(Stack * stack);
-
+	int isEmpty(Stack *stack);
 }
 
 #endif

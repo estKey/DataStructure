@@ -80,6 +80,8 @@ namespace ls {
 		}
 	}
 
+
+
 	int isEmpty(Stack* top) { return (top == NULL); }
 
 }
