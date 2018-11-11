@@ -162,6 +162,7 @@
     <ClInclude Include="ArrayBinaryHeap.hpp" />
     <ClInclude Include="ArrayHash.hpp" />
     <ClInclude Include="ArrayQueue.hpp" />
+    <ClInclude Include="ArrayStack.hpp" />
     <ClInclude Include="AVLBinarySearchTree.hpp" />
     <ClInclude Include="BinaryTree.hpp" />
     <ClInclude Include="common.hpp" />
