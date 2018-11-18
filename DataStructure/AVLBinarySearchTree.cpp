@@ -135,6 +135,51 @@ namespace avlbst {
 			return MAXINT(hrl, hll) + 1;
 		}//calcHeight();
 
+		void deleteNode (Node* p, Node *n)
+			// Delete node pointed to by n.
+			// Parameters:
+			//	n	- points to node to be deleted
+			//	p	- points to parent of node to be deleted.
+		{
+			if (!n->leftChild || !n->rightChild) {
+				if (!n->leftChild && !n->rightChild) {
+					if (p->leftChild == n)
+						p->leftChild = NULL;
+					else if (n->rightChild == n)
+						p->rightChild = NULL;
+				}
+				else if (n->leftChild) {
+					if (p->leftChild == n)
+						p->leftChild = n->leftChild;
+					else if (p->rightChild == n)
+						p->rightChild = n->leftChild;
+				}
+				else if (n->rightChild) {
+					if (p->leftChild == n)
+						p->leftChild = n->rightChild;
+					else if (p->rightChild == n)
+						p->rightChild = n->rightChild;
+				}
+				free(n);
+			}
+			else if (n->leftChild && n->rightChild) {
+				Node *backparent = n, *subsitituter = n->leftChild;
+				if (n->leftChild->height <= n->rightChild->height) {
+					while (subsitituter->rightChild)
+					{
+						backparent = subsitituter;
+						subsitituter = subsitituter->rightChild;
+					}
+				}
+				n->key = subsitituter->key;
+				n->value = subsitituter->value;
+				if (backparent->leftChild == subsitituter)
+					backparent->leftChild = subsitituter->leftChild;
+				else
+					backparent->rightChild = subsitituter->leftChild;
+				free(subsitituter);
+			}
+		}//delete()
 
 		Node* rebalance(Node* root)
 			// Check balance factor to see if balancing required (bf > 1 or bf < -1).

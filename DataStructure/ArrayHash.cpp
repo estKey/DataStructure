@@ -8,40 +8,68 @@ namespace ah {
 		return 0;
 	}
 
-	Hash *initHash(int size)
+	HashTable *initHash(int size)
 	{
-		Hash *newHashTable = (Hash *)malloc(sizeof(Hash));
-		newHashTable->hashtable = (HashTable)malloc(sizeof(HashTable)*size);
+		HashTable *newHashTable = (HashTable *)malloc(sizeof(HashTable));
 		newHashTable->size = size;
+		newHashTable->collisions = (int *)malloc(sizeof(int *)*size);
+		memset(newHashTable->collisions, 0, size);
+		newHashTable->a = (ArrayList *)malloc(sizeof(Data *)*size);
+		memset(newHashTable->a, -1, size);
 		return newHashTable;
 	}
 
-	int hashCode(Data data, Hash *hash)
+	int hashCode(char* value, HashTable *ht)
 	{
 		int key = 0;
-		for (int i = 0; i < strlen(data); i++)
-			key *= 1 + data[i];
+		for (int i = 0; i < strlen(value); i++)
+			key += value[i];
+		return key % (ht->size);
+	}
+
+	void insert(char *value, HashTable *ht)
+	{
+		int key = hashCode(value, ht);
+		ht->a[key]->key = key;
+		strcpy((ht->a[key]->value), value);
+	}
+
+	int LinearProbing()
+	{
+		int key;
 		return key;
 	}
 
-	void insert(Data data, Hash *hash)
+	int QuadraticProbing()
 	{
-		int key = hashCode(data, hash);
-		*(hash->hashtable[key]) = *data;
+		int key;
+		return key;
 	}
 
-	int searchId(Data data, Hash *hash)
+	int DoubbleHashing()
 	{
-		int dist;
+		int key;
+		return key;
+	}
+
+	int searchId(char *value, HashTable *ht)
+	{
+		int key;
+
+		return key;
+	}
+
+	Data *searchItem(int key, HashTable *ht)
+	{
+		Data *dist;
 
 		return dist;
 	}
 
-	Data searchItem(int index, Hash *hash)
+	void printTable(HashTable *ht)
 	{
-		Data dist;
-
-		return dist;
+		for (int i = 0; i < ht->size; i++)
+			printf("%d\n", ht->a[i]);
 	}
 
 }

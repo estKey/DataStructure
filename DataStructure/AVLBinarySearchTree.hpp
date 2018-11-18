@@ -25,6 +25,7 @@ namespace avlbst {
 	Tree *initTree();
 	Node *initNode(Key k, Value v);
 	Node *insertNode(Key k, void *v, Node *root);
+	void deleteNode(Node* p, Node *n);
 	Node *removeNode(Root root, Key k);
 	void insert(Key k, void *v, Tree *t);
 

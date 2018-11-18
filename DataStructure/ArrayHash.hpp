@@ -4,17 +4,22 @@
 
 namespace ah {
 #include "common.hpp"
-	typedef char* Data;
-	typedef Data* HashTable;
-	typedef struct _Hash
+	typedef struct Data
+	{
+		int key;
+		char *value;
+	}Data;
+	typedef Data* ArrayList;
+	typedef struct _HashTable
 	{
 		int size;
-		HashTable hashtable;
-	}Hash;
+		int *collisions;
+		ArrayList *a;
+	}HashTable;
 
-	Hash *initHash(int size);
-	int hashCode(Data data, Hash *hash);
-	void insert(Data data, Hash *hash);
+	HashTable *initHash(int size);
+	int hashCode(Data data, HashTable *ht);
+	void insert(Data data, HashTable *ht);
 
 }
 

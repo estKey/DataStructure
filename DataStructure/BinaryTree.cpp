@@ -145,11 +145,6 @@ namespace bt {
 
 	}
 
-	void AVLtree()
-	{
-
-	}
-
 	void printTree(BinaryTree *tree)
 	{
 		printf("Current Tree:\n");
