@@ -152,6 +152,7 @@
     <ClCompile Include="AVLBinarySearchTree.cpp" />
     <ClCompile Include="BinaryTree.cpp" />
     <ClCompile Include="DynamicArray.cpp" />
+    <ClCompile Include="LinkedGraph.cpp" />
     <ClCompile Include="LinkedHash.cpp" />
     <ClCompile Include="LinkedStack.cpp" />
     <ClCompile Include="main.cpp" />
@@ -169,6 +170,7 @@
     <ClInclude Include="common.hpp" />
     <ClInclude Include="DynamicArray.hpp" />
     <ClInclude Include="LinkedBinaryHeap.hpp" />
+    <ClInclude Include="LinkedGraph.hpp" />
     <ClInclude Include="LinkedHash.hpp" />
     <ClInclude Include="LinkedQueue.hpp" />
     <ClInclude Include="LinkedStack.hpp" />
