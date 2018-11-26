@@ -5,7 +5,8 @@ namespace lg {
 	int graphUI(void)
 	{
 		int size = 5;
-		Graph *graph = initGraph(size);
+		Data dataset[5];
+		Graph *graph = deploy(dataset, size);
 		return 0;
 	}
 
@@ -45,8 +46,14 @@ namespace lg {
 			g->VertexSet[i] = v;
 	}
 
-	void pushVertex(Graph *g)
+	Graph *deploy(Data *dataset, int n)
 	{
-
+		Graph *g = initGraph(n);
+		for (int i = 0; i < n; i++)
+		{
+			Vertex *v = initVertex(dataset[i], i);
+			insert(v, g, i);
+		}
+		return g;
 	}
 }

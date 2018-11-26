@@ -2,6 +2,11 @@
 
 namespace avlbst {
 
+	void avlbstUI()
+	{
+
+	}
+
 	Node *initNode(Key k, Value v)
 	{
 		Node *newNode = (Node *)malloc(sizeof(Node));
