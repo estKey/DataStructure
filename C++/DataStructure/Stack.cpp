@@ -1,51 +1,81 @@
-﻿#include <iostream>
-#include <vector>
-#include <cstdlib>
-#include <string>
-#include <stdexcept>
+﻿#include "Stack.hpp"
 
-namespace Stack {
+// Array Stack
+template <class T>
+class ArrayStack 
+{
+private:
+	vector<T> items;
 
-	using namespace std;
-
-	template <class T>
-	class Stack {
-	private:
-		vector<T> elems;     // 元素 
-
-	public:
-		void push(T const&);  // 入栈
-		void pop();               // 出栈
-		T top() const;            // 返回栈顶元素
-		bool empty() const {       // 如果为空则返回真。
-			return elems.empty();
-		}
-	};
-
-	template <class T>
-	void Stack<T>::push(T const& elem)
-	{
-		// 追加传入元素的副本
-		elems.push_back(elem);
+public:
+	void push(T const&);
+	void pop();
+	T top() const;
+	bool isEmpty() const {
+		return items.empty();
 	}
+};
 
-	template <class T>
-	void Stack<T>::pop()
-	{
-		if (elems.empty()) {
-			throw out_of_range("Stack<>::pop(): empty stack");
-		}
-		// 删除最后一个元素
-		elems.pop_back();
-	}
+template <class T>
+void ArrayStack<T>::push(T const& elem)
+{
+	items.push_back(elem);
+}
 
-	template <class T>
-	T Stack<T>::top() const
-	{
-		if (elems.empty()) {
-			throw out_of_range("Stack<>::top(): empty stack");
-		}
-		// 返回最后一个元素的副本 
-		return elems.back();
+template <class T>
+void ArrayStack<T>::pop()
+{
+	if (items.empty()) {
+		throw out_of_range("Stack<>::pop(): empty stack");
 	}
+	items.pop_back();
+}
+
+template <class T>
+T ArrayStack<T>::top() const
+{
+	if (items.empty()) {
+		throw out_of_range("Stack<>::top(): empty stack");
+	}
+	return items.back();
+}
+
+
+// Linked Stack
+template <class T>
+class LinkedStack
+{
+private:
+	T *top;
+public:
+	void push(T const&);
+	void pop();
+	T top() const;
+	bool isEmpty() const {
+		return items.empty();
+	}
+};
+
+template <class T>
+void LinkedStack<T>::push(T const& elem)
+{
+	items.push_back(elem);
+}
+
+template <class T>
+void LinkedStack<T>::pop()
+{
+	if (items.empty()) {
+		throw out_of_range("Stack<>::pop(): empty stack");
+	}
+	items.pop_back();
+}
+
+template <class T>
+T LinkedStack<T>::top() const
+{
+	if (items.empty()) {
+		throw out_of_range("Stack<>::top(): empty stack");
+	}
+	return items.back();
 }
